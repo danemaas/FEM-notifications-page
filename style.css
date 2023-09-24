@@ -1,0 +1,176 @@
+/*====== GOOGLE FONTS ======*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/*====== VARIABLES ======*/
+:root {
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+    --white: hsl(0, 0%, 100%);
+    --verylight-grayish-blue: hsl(210, 60%, 98%);
+    --light-grayish-blue1: hsl(211, 68%, 94%);
+    --light-grayish-blue2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+/*====== BASE ======*/
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 62.5%;
+    background-color: var(--light-grayish-blue2);
+}
+
+img {
+    width: 40px;
+}
+
+p {
+    margin: 0;
+}
+
+/*====== MAIN CLASSES ======*/
+.container {
+    width: 100%;
+    margin: 3rem auto;
+}
+
+.notif-section {
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.notif-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: auto 0;
+}
+
+.notif-counter {
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: var(--blue);
+    color: var(--white);
+    padding-inline: .7rem;
+    border-radius: 5px;
+}
+
+.mark-read {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--grayish-blue);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.mark-read:hover,
+.name:hover,
+.post-highlight:hover {
+    color: var(--blue);
+}
+
+.notif-card {
+    border: none;
+    margin-bottom: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.unread {
+    background-color: var(--verylight-grayish-blue);
+}
+
+.notif-details {
+    padding-left: 3.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    color: var(--dark-grayish-blue);
+    font-size: .85rem;
+}
+
+.notif-details > p {
+    flex: 1;
+}
+
+.notif-details > img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.name {
+    font-weight: 800;
+    color: var(--very-dark-blue);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.notif-age{
+    color: var(--grayish-blue);
+}
+
+.post-highlight {
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.group-highlight {
+    font-weight: 800;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.private-msg {
+    border: 2px solid var(--light-grayish-blue2);
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.private-msg:hover {
+    background-color: var(--light-grayish-blue1);
+    border-color: transparent;
+}
+
+.marker {
+    display: inline-block;
+    margin-left: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 10rem;
+    background-color: var(--red);
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 569px;
+    }
+}
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

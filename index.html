@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Notifications page</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="notif-section">
+        <div class="notif-header">
+          <div class="wrapper">
+            <h1 class="notif-title">Notifications</h1>
+            <span class="notif-counter" id="unreadCounter">3</span>
+          </div>
+          <span class="mark-read" id="markReadBtn" onclick="toggleRead()">
+            Mark all as read
+          </span>
+        </div>
+        <div class="notif-container" id="notification">
+          <div class="card notif-card unread" data-target="marker1">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-mark-webber.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Mark Webber</span> reacted to your recent
+                post
+                <span class="post-highlight">My first tournament today!</span>
+                <span class="marker" id="marker1"></span>
+                <br />
+                <span class="notif-age">1m ago</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card notif-card unread" data-target="marker2">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-angela-gray.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Angela Gray</span> followed you
+                <span class="marker" id="marker2"></span>
+                <br />
+                <span class="notif-age">5m ago</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card notif-card unread" data-target="marker3">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-jacob-thompson.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Jacob Thompson</span> has joined your group
+                <span class="group-highlight">Chess Club</span>
+                <span class="marker" id="marker3"></span>
+                <br />
+                <span class="notif-age">1 day ago</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card notif-card" data-target="marker4">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-rizky-hasanuddin.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Rizky Hasanuddin</span> sent you a private
+                message
+                <span class="marker d-none" id="marker4"></span>
+                <br />
+                <span class="notif-age">5 days ago</span>
+              </p>
+              <div class="private-msg">
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </div>
+            </div>
+          </div>
+
+          <div class="card notif-card" data-target="marker5">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-kimberly-smith.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Kimberly Smith</span> commented on your
+                picture
+                <span class="marker d-none" id="marker5"></span>
+                <br />
+                <span class="notif-age">1 week ago</span>
+              </p>
+              <img src="assets/images/image-chess.webp" alt="" />
+            </div>
+          </div>
+
+          <div class="card notif-card" data-target="marker6">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-nathan-peterson.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Nathan Peterson</span> reacted to your recent
+                post
+                <span class="post-highlight">
+                  5 end-game strategies to increase your win rate
+                </span>
+                <span class="marker d-none" id="marker6"></span>
+                <br />
+                <span class="notif-age">2 weeks ago</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card notif-card" data-target="marker7">
+            <img
+              class="position-absolute"
+              src="assets/images/avatar-anna-kim.webp"
+              alt=""
+            />
+            <div class="notif-details">
+              <p class="notif-text">
+                <span class="name">Anna Kim</span> left the group
+                <span class="group-highlight">Chess Club</span>
+                <span class="marker d-none" id="marker7"></span>
+                <br />
+                <span class="notif-age">2 weeks ago</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/danemaas">Daniel</a>.
+    </footer>
+  </body>
+  <!-- BOOTSTRAP JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- MAIN JS -->
+  <script src="script.js"></script>
+</html>
